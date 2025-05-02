@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,6 +62,14 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				cyber: {
+					'bg': '#0d1117',
+					'accent': '#58a6ff',
+					'secondary': '#8b5cf6',
+					'grid': '#1f2937',
+					'text': '#c9d1d9',
+					'highlight': '#ff79c6'
 				}
 			},
 			borderRadius: {
@@ -84,11 +93,35 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'pulse-glow': {
+					'0%, 100%': { 
+						boxShadow: '0 0 5px theme("colors.cyber.accent"), 0 0 10px theme("colors.cyber.accent")' 
+					},
+					'50%': { 
+						boxShadow: '0 0 20px theme("colors.cyber.accent"), 0 0 30px theme("colors.cyber.accent")' 
+					}
+				},
+				'grid-flow': {
+					'0%': { 
+						backgroundPosition: '0% 0%' 
+					},
+					'100%': { 
+						backgroundPosition: '100% 100%' 
+					}
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'pulse-glow': 'pulse-glow 2s infinite',
+				'grid-flow': 'grid-flow 20s linear infinite'
+			},
+			backgroundImage: {
+				'cyber-grid': 'linear-gradient(theme("colors.cyber.grid") 1px, transparent 1px), linear-gradient(90deg, theme("colors.cyber.grid") 1px, transparent 1px)'
+			},
+			backgroundSize: {
+				'cyber-grid': '30px 30px'
 			}
 		}
 	},
